@@ -20,5 +20,10 @@ namespace TemperatureMonitoring.Core
             this.NormalTemp = normalTemp;
             this.ResultTemp = resultTemp;
         }
+
+        public override string ToString()
+        {
+            return $"Время: {Time} | Факт: {ActualTemp} | Норма: {NormalTemp} | Отклонение: {ResultTemp}";
+        }
     }
 }

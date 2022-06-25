@@ -29,21 +29,15 @@
 
             foreach (int temp in parsedTemperaturesData)
             {
-                bool temperatureCheckResult = TemperatureCheck(fish, temp);
-
-                int normalTemp;
-                if (temp < fish.MaxTemperature && fish.MinTemperature != 0)
-                {
-                    normalTemp = fish.MinTemperature;
-                }
-                else 
-                {
-                    normalTemp = fish.MaxTemperature;
-                }
-
+                int normalTemp = TemperatureCheck(fish, temp).Item2;
+                bool temperatureCheckResult = TemperatureCheck(fish, temp).Item1;
                 if (!temperatureCheckResult)
                 {
-                    content.AddResultToReport(analyzeTime, temp, normalTemp);
+                    content.AddResultToReport(analyzeTime, temp, normalTemp, fish);
+                }
+                else
+                {
+                    continue;
                 }
 
                 analyzeTime += AnalyzeInterval;
@@ -69,15 +63,35 @@
             }
         }
 
-        private bool TemperatureCheck(Fish fish, int actualTemp)
+        private Tuple<bool, int> TemperatureCheck(Fish fish, int actualTemp)
         {
-            if (fish.MinTemperature > actualTemp)
-                return false;
-
+            if (fish.MinTemperature > actualTemp && fish.MinTemperature != int.MinValue)
+                return new Tuple<bool, int>(false, fish.MinTemperature);
             else if (fish.MaxTemperature < actualTemp)
-                return false;
+                return new Tuple<bool, int>(false, fish.MaxTemperature);
+            else if (int.MinValue == fish.MinTemperature)
+                return new Tuple<bool, int>(true, fish.MaxTemperature);
             else
-                return true;
+                return new Tuple<bool, int>(true, fish.MaxTemperature);
+        }
+
+        public void Save(ReportContent report, string result, string path)
+        {
+            try
+            {
+                using (StreamWriter sw = new StreamWriter(path))
+                {
+                    foreach (var item in report.content)
+                    {
+                        sw.WriteLine(item.ToString());
+                    }
+                    sw.WriteLine(result);   
+                }
+            }
+            catch
+            {
+                throw;
+            }
         }
     }
 }

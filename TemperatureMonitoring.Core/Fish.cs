@@ -5,10 +5,10 @@
         public string Name { get; set; }
         public int MaxTemperature { get; set; }
         public TimeSpan MaxTemperatureStoreTime { get; set; }
-        public int MinTemperature { get; set; }
+        public int MinTemperature { get; set; } = int.MinValue;
         public TimeSpan MinTemperatureStoreTime { get; set; }
 
-        public Fish(string name, int maxTemperature, TimeSpan maxTemperatureStoreTime, TimeSpan minTemperatureStoreTime, int minTemperature = int.MinValue)
+        public Fish(string name, int maxTemperature, TimeSpan maxTemperatureStoreTime, TimeSpan minTemperatureStoreTime, int minTemperature)
         {
             Name = name;
             MaxTemperature = maxTemperature;

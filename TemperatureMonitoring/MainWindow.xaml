@@ -48,9 +48,9 @@
             <TextBox x:Name="TemperaturesData" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" VerticalContentAlignment="Center" />
 
         </Grid>
-        <Button x:Name="LoadBtn" Grid.Column="1" Content="Загрузить" HorizontalAlignment="Left" Margin="19,300,0,0" VerticalAlignment="Top" Height="40" Width="96" Click="LoadBtn_Click" />
-        <Button x:Name="GenerateReportBtn" Grid.Column="1" Content="Создать отчет" HorizontalAlignment="Left" Margin="162,300,0,0" VerticalAlignment="Top" Height="40" Width="115" Click="GenerateReportBtn_Click"/>
-        <Button x:Name="SaveBtn" Grid.Column="1" Content="Сохранить" HorizontalAlignment="Left" Margin="97,356,0,0" VerticalAlignment="Top" Height="40" Width="96"/>
+        <Button x:Name="LoadBtn" Grid.Column="1" Content="Загрузить" HorizontalAlignment="Left" Margin="19,320,0,0" VerticalAlignment="Top" Height="40" Width="96" Click="LoadBtn_Click" />
+        <Button x:Name="GenerateReportBtn" Grid.Column="1" Content="Создать отчет" HorizontalAlignment="Left" Margin="162,320,0,0" VerticalAlignment="Top" Height="40" Width="115" Click="GenerateReportBtn_Click"/>
+        <Button x:Name="SaveBtn" Grid.Column="1" Content="Сохранить" HorizontalAlignment="Left" Margin="97,376,0,0" VerticalAlignment="Top" Height="40" Width="96" Click="SaveBtn_Click"/>
         <DataGrid x:Name="ReportTable" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Время" Binding="{Binding Time}"></DataGridTextColumn>
@@ -59,6 +59,7 @@
                 <DataGridTextColumn Header="Отклонение"  Binding="{Binding ResultTemp}"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
+        <TextBox x:Name="VerdictTextBox" Grid.Column="1" HorizontalAlignment="Left" Margin="19,273,0,0" TextWrapping="Wrap" Text="Результат: " VerticalAlignment="Top" Width="258" Height="42" Background="White" FontSize="12"/>
 
 
     </Grid>
