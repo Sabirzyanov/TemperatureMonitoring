@@ -7,4 +7,12 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Report.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TemperatureMonitoring.Core\TemperatureMonitoring.Core.csproj" />
+  </ItemGroup>
+
 </Project>

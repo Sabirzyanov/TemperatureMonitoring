@@ -1,17 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using TemperatureMonitoring.Core;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using Microsoft.Win32;
 
 namespace TemperatureMonitoring
 {
@@ -20,9 +10,26 @@ namespace TemperatureMonitoring
     /// </summary>
     public partial class MainWindow : Window
     {
+        TemperatureAnalyzer temperatureAnalyzer;
         public MainWindow()
         {
             InitializeComponent();
+            temperatureAnalyzer = new TemperatureAnalyzer();
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void LoadBtn_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog loadDialog = new OpenFileDialog();
+            var result = loadDialog.ShowDialog();
+            if (result == true)
+            {
+                
+            }
         }
     }
 }

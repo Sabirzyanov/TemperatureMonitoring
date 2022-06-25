@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32516.85
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemperatureMonitoring", "TemperatureMonitoring\TemperatureMonitoring.csproj", "{8A022EB2-4EA1-4FD6-B27F-7FD877C14DAE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemperatureMonitoring.WPF", "TemperatureMonitoring\TemperatureMonitoring.WPF.csproj", "{8A022EB2-4EA1-4FD6-B27F-7FD877C14DAE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemperatureMonitoring.Core", "TemperatureMonitoring.Core\TemperatureMonitoring.Core.csproj", "{8E94A9D7-BBD2-4E0A-97C7-09100D449915}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemperatureMonitoringConsole", "TemperatureMonitoringConsole\TemperatureMonitoringConsole.csproj", "{E545F297-2D30-4AD3-8D13-99CB36DFD431}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{8A022EB2-4EA1-4FD6-B27F-7FD877C14DAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8A022EB2-4EA1-4FD6-B27F-7FD877C14DAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8A022EB2-4EA1-4FD6-B27F-7FD877C14DAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E94A9D7-BBD2-4E0A-97C7-09100D449915}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E94A9D7-BBD2-4E0A-97C7-09100D449915}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E94A9D7-BBD2-4E0A-97C7-09100D449915}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E94A9D7-BBD2-4E0A-97C7-09100D449915}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E545F297-2D30-4AD3-8D13-99CB36DFD431}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E545F297-2D30-4AD3-8D13-99CB36DFD431}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E545F297-2D30-4AD3-8D13-99CB36DFD431}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E545F297-2D30-4AD3-8D13-99CB36DFD431}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
