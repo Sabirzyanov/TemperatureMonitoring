@@ -2,7 +2,7 @@
 {
     public class ReportContent
     {
-        public List<string> content;
+        public List<ReportContentElement> content;
         public Fish fish;
 
         public ReportContent(Fish fish)
@@ -13,7 +13,7 @@
 
         public void AddResultToReport(DateTime analyzeTime, int actualTemperature, int normalTemprature)
         {
-            content.Add($"{analyzeTime:dd.MM.yyyy HH.mm.ss} | {actualTemperature} | {normalTemprature} | {actualTemperature - normalTemprature}");
+            content.Add(new ReportContentElement(analyzeTime, actualTemperature, normalTemprature, actualTemperature - normalTemprature));
         }
     }
 }

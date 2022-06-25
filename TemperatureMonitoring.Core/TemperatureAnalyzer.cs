@@ -31,7 +31,15 @@
             {
                 bool temperatureCheckResult = TemperatureCheck(fish, temp);
 
-                int normalTemp = temp >= 0 ? fish.MaxTemperature : fish.MinTemperature;
+                int normalTemp;
+                if (temp < fish.MaxTemperature && fish.MinTemperature != 0)
+                {
+                    normalTemp = fish.MinTemperature;
+                }
+                else 
+                {
+                    normalTemp = fish.MaxTemperature;
+                }
 
                 if (!temperatureCheckResult)
                 {
@@ -65,6 +73,7 @@
         {
             if (fish.MinTemperature > actualTemp)
                 return false;
+
             else if (fish.MaxTemperature < actualTemp)
                 return false;
             else

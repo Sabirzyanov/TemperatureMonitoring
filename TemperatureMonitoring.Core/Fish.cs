@@ -16,5 +16,12 @@
             MinTemperature = minTemperature;
             MinTemperatureStoreTime = minTemperatureStoreTime;
         }
+
+        public Fish(string name, int maxTemperature, TimeSpan maxTemperatureStoreTime)
+        {
+            Name = name;
+            MaxTemperature = maxTemperature;
+            MaxTemperatureStoreTime = maxTemperatureStoreTime;
+        }
     }
 }
