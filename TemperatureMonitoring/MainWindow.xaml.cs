@@ -57,7 +57,7 @@ namespace TemperatureMonitoring
             }
             catch
             {
-                MessageBox.Show("Введите данные всех полей");
+                MessageBox.Show("Введите данные всех полей правильноё");
             }
         }
 

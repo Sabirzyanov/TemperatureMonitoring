@@ -21,6 +21,12 @@
             }
         }
 
+        /// <summary>
+        /// Analyzes the accepted data by conditions and returns a report
+        /// </summary>
+        /// <param name="data">A string with temperature parameters</param>
+        /// <param name="analyzeTime">The time when the analysis started</param>
+        /// <param name="fish">Fish data</param>
         public ReportContent Analyze(string data, DateTime analyzeTime, Fish fish)
         {
             int[] parsedTemperaturesData = TemperatureStringParser(data);
@@ -63,6 +69,11 @@
             }
         }
 
+        /// <summary>
+        /// Checks the temperature according to the entered conditions
+        /// </summary>
+        /// <returns>Returns whether the temperature is normal, 
+        /// and the temperature from which the deviation occurs</returns>
         private Tuple<bool, int> TemperatureCheck(Fish fish, int actualTemp)
         {
             if (fish.MinTemperature > actualTemp && fish.MinTemperature != int.MinValue)
